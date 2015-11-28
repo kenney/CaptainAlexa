@@ -1,0 +1,20 @@
+NextBoatIntent when the next boat is
+NextBoatIntent when's the next boat
+NextBoatIntent when is the next boat
+NextBoatIntent what are the next boats
+NextBoatIntent what is the next boat
+
+SetDirectionIntent set direction {Direction}
+
+SetWalkingTimeIntent set walking time to {WalkingTime}
+
+SetTimeToFerry set time to ferry {CommuteTime} minutes
+SetTimeToFerry set driving time to {CommuteTime} minutes
+SetTimeToFerry set commute time to {CommuteTime} minutes
+
+BoatToMakeIntent what boat do I need to take to make a {TargetTime} meeting
+BoatToMakeIntent what boat do I need to take make it by {TargetTime}
+BoatToMakeIntent what boat do I need to be in the office by {TargetTime}
+BoatToMakeIntent what boat do I need to be home by {TargetTime}
+
+HowMuchTimeIntent how much time do I have to make the boat

@@ -1,0 +1,48 @@
+{
+  "intents": [
+    {
+     "intent": "BoatToMakeIntent",
+     "slots": [
+        {
+          "name": "TargetTime",
+          "type": "TIME"
+        }
+      ]
+    },
+    {
+      "intent": "NextBoatIntent",
+      "slots": []
+    },
+    {
+      "intent": "HowMuchTimeIntent",
+      "slots": []
+    },
+    {
+      "intent": "SetDirectionIntent",
+      "slots": [
+        {
+          "name": "Direction",
+          "type": "LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "SetWalkingTimeIntent",
+      "slots": [
+        {
+          "name": "WalkingTime",
+          "type": "DURATION"
+        }
+      ]
+    },
+    {
+      "intent": "SetTimeToFerryIntent",
+      "slots": [
+        {
+          "name": "CommuteTime",
+          "type": "DURATION"
+        }
+      ]
+    }
+  ]
+}
