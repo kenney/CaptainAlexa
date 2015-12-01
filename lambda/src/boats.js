@@ -8,7 +8,9 @@ function Boat(name) {
 	this.time = name;
   
 	today = now.format("MM/DD/YYYY")
-	boatTimeStr = today + " " + this.time
+	
+	// Lambda servers run on UTC time, so set the dates to be loaded from Boston time.
+	boatTimeStr = today + " " + this.time + " -0500"
 	this.moment = moment(new Date(boatTimeStr))
 	this.timestamp = this.moment.format("X")
 }
