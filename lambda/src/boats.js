@@ -1,7 +1,7 @@
 var fs = require('fs');
 var moment = require('moment-timezone');
 
-var now = moment().tz("Americas/New_York")
+var now = moment().tz("America/New_York")
 
 var tripTime = 40
 
