@@ -2,11 +2,13 @@
 
 var Boats = require("./boats.js")
 
-var nb = nextBoats()
-var hmt = howMuchTime()
+var nb = Boats.nextBoats()
+var hmt = Boats.howMuchTime()
+var wb = Boats.whichBoatForDeadline("10:00 pm")
 
 console.log("Next boats response: " + nb)
 console.log("How much time response: " + hmt)
+console.log("Which boat for 9pm? " + wb)
 
 
 function nextBoats(direction) {

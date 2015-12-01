@@ -1,20 +1,40 @@
 NextBoatIntent when the next boat is
+NextBoatIntent when the next ferry is
 NextBoatIntent when's the next boat
+NextBoatIntent when's the next ferry
 NextBoatIntent when is the next boat
+NextBoatIntent when is the next ferry
 NextBoatIntent what are the next boats
+NextBoatIntent what are the next ferries
 NextBoatIntent what is the next boat
+NextBoatIntent what is the next ferries
+NextBoatIntent what time is the next boat
+NextBoatIntent what time is the next ferry
 
 SetDirectionIntent set direction {Direction}
+SetDirectionIntent set direction to {Direction}
+SetDirectionIntent I'm headed {Direction}
+SetDirectionIntent I am headed {Direction}
 
 SetWalkingTimeIntent set walking time to {WalkingTime}
 
-SetTimeToFerry set time to ferry {CommuteTime} minutes
-SetTimeToFerry set driving time to {CommuteTime} minutes
-SetTimeToFerry set commute time to {CommuteTime} minutes
+SetTimeToFerryIntent set time to ferry to {CommuteTime} minutes
+SetTimeToFerryIntent set driving time to {CommuteTime} minutes
+SetTimeToFerryIntent set commute time to {CommuteTime} minutes
 
 BoatToMakeIntent what boat do I need to take to make a {TargetTime} meeting
-BoatToMakeIntent what boat do I need to take make it by {TargetTime}
+BoatToMakeIntent what ferry do I need to take to make a {TargetTime} meeting
+BoatToMakeIntent what boat do I need to make it by {TargetTime}
+BoatToMakeIntent what ferry do I need to make it by {TargetTime}
 BoatToMakeIntent what boat do I need to be in the office by {TargetTime}
+BoatToMakeIntent what ferry do I need to be in the office by {TargetTime}
 BoatToMakeIntent what boat do I need to be home by {TargetTime}
+BoatToMakeIntent what ferry do I need to be home by {TargetTime}
+BoatToMakeIntent I need to be home by {TargetTime}
+BoatToMakeIntent I need to be at work by {TargetTime}
+BoatToMakeIntent I have a meeting at {TargetTime}
 
 HowMuchTimeIntent how much time do I have to make the boat
+HowMuchTimeIntent how much time do I have to make the ferry
+HowMuchTimeIntent how much time do I have for the next boat
+HowMuchTimeIntent how much time do I have for the next ferry

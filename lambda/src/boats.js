@@ -3,6 +3,8 @@ var moment = require('moment');
 
 var now = moment()
 
+var tripTime = 40
+
 function Boat(name) {
 	this.name = name
 	this.time = name;
@@ -25,6 +27,14 @@ Boat.prototype.timeTil = function() {
 };
 Boat.prototype.toString = function() {
 	return this.name
+}
+Boat.prototype.isAfter = function(targetTS) {
+	return (this.timestamp >= targetTS)
+}
+Boat.prototype.willMakeItInTime = function(targetTS) {
+	var arrivalTime = (tripTime*60) + parseFloat(this.timestamp)
+	//console.log("this.ts: " + this.timestamp + " arrivalTime: " + arrivalTime + " targetTS: " + targetTS)
+	return ( arrivalTime <= targetTS)
 }
 
 function getUpcomingBoats(direction) {
@@ -57,6 +67,44 @@ function nextBoats(direction) {
     }
 }
 
+function howMuchTime(direction) {
+	if (typeof direction === 'undefined') { direction = 'inbound'; }
+    
+    var nextBoats = getUpcomingBoats(direction)
+    console.log("We found " + nextBoats.length + " upcoming boats")
+    if (nextBoats.length >= 1) {
+		return "You have " + nextBoats[0].timeTil() + " until the " + nextBoats[0] + " boat leaves"
+	} else {
+		return "Sorry, but there are no more boats today"
+	}
+}
+
+function whichBoatForDeadline(targetTime) {
+    if (typeof direction === 'undefined') { direction = 'inbound'; }
+    
+    var allBoats = getUpcomingBoats(direction)
+	
+	var today = now.format("MM/DD/YYYY")
+	var targetTimeStr = today + " " + targetTime + " -0500"
+	console.log(targetTimeStr)
+	ttMoment = moment(new Date(targetTimeStr))
+	ttTS = ttMoment.format("X")
+	
+	for(k=allBoats.length - 1; k >= 0; k--) { 
+		console.log("Looking at boat " + allBoats[k])
+		if (allBoats[k].willMakeItInTime(ttTS)) {
+			console.log("Boat can make it!")
+			return "The " + allBoats[k] + " boat will get you there by " + targetTime
+		} else {
+			console.log("Boat can't make it")
+		}
+	}
+	
+	return "No boats could get you there by " + targetTime + " so maybe you should try Uber?"
+}
+
 module.exports.nextBoats = nextBoats
 module.exports.getUpcomingBoats = getUpcomingBoats
+module.exports.howMuchTime = howMuchTime
+module.exports.whichBoatForDeadline = whichBoatForDeadline
 module.exports.Boat = Boat
